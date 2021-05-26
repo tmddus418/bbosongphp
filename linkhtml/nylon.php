@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html>
     <head>
@@ -22,4 +23,6 @@
 
     <body>
         <h1>nylon2</h1>
+        <img src="nylon.png">
+                      
     </body>
