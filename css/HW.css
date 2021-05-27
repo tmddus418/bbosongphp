@@ -1,0 +1,50 @@
+/* 레이아웃 기본설정*/
+* {
+    box-sizing: border-box;
+    margin:5px;
+    padding:2px;
+}
+/* 그리드를 활용한 레이아웃 설정 */
+.container{
+    display:grid;
+    grid-template-columns: repeat(10,1fr);
+    grid-gap:5px;
+    grid-auto-rows:minmax(100px,auto);
+}
+.fabric{
+    grid-column:1/11;
+    grid-row:1;
+    background-color:lightgray;
+}
+.fabricInfo{
+    grid-column:1/11;
+    grid-row:2/5;
+    background-color:lightgray;
+}
+.washInst{
+    grid-column:1/6;
+    grid-row:5/10;
+    background-color:lightgray;
+}
+.tips{
+    grid-column:1/6;
+    grid-row:10/11;
+    background-color:lightgray;
+}
+.washMeth{
+    grid-column:6/11;
+    grid-row:5/8;
+    background-color:lightgray;
+}
+.detInfo{
+    grid-column:6/11;
+    grid-row:8/11;
+    background-color:lightgray;
+}
+/* 크기가 자동으로 설정되는 텍스트상자 */
+.textBox{
+	display:flex;
+}
+.textBox input{
+    flex: 1 1 auto;
+}
