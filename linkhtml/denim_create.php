@@ -35,14 +35,8 @@ $CleanserInfo = '';
 while($row = mysqli_fetch_array($cleanserInfo_result)) {
     $CleanserInfo = $CleanserInfo."{$row['CleanserInfo']}";
 }
-
-$update = '';
-if(isset($_GET['id'])) {
-    $update= '<a href="denim_update.php?id='.$_GET['id'].'"> update</a>';
-}
-
-
 ?>
+
 <!DOCTYPE html>
 <html>
     <head>
@@ -91,11 +85,12 @@ if(isset($_GET['id'])) {
             <!--나만의 팁 추가하기-->
             <div class="tips">
                 <h4><b>나만의 팁 추가하기</b></h4>
-                <form class="submit">
                     <div class="textBox">
-                        <a href="denim_create.php"> create </a>
-                    </div>
-                </form>           
+                        <p><form action="denim_process_create.php" method = "post" class="submit"></p>
+                        <p><textarea name="Notice" placeholder = "나만의 꿀팁을 적어주세요 !"></textarea></p>
+                        <p><input type = "submit"></p>
+                </form>   
+            </div>           
             </div>
             <!--세탁방법-->
             <div class="washMeth">
