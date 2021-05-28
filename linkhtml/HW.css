@@ -4,6 +4,9 @@
     margin:5px;
     padding:0px;
 }
+body {
+    background-color: rgb(239, 241, 231);
+}
 /* 그리드를 활용한 레이아웃 설정 */
 .container{
     display:grid;
@@ -11,35 +14,41 @@
     grid-gap:5px;
     grid-auto-rows:minmax(100px,auto);
 }
-.fabric{
+/* .fabric{
     grid-column:1/11;
     grid-row:1;
     background-color:lightgray;
-}
+} */
 .fabricInfo{
     grid-column:1/11;
     grid-row:2/5;
-    background-color:lightgray;
+    background-color:white;
+    margin-top: 0px;
+    border-radius: 15px;
 }
 .washInst{
     grid-column:1/6;
     grid-row:5/10;
-    background-color:lightgray;
+    background-color:white;
+    border-radius: 15px;
 }
 .tips{
     grid-column:1/6;
     grid-row:10/11;
-    background-color:lightgray;
+    background-color:white;
+    border-radius: 15px;
 }
 .washMeth{
     grid-column:6/11;
     grid-row:5/8;
-    background-color:lightgray;
+    background-color:white;
+    border-radius: 15px;
 }
 .detInfo{
     grid-column:6/11;
     grid-row:8/11;
-    background-color:lightgray;
+    background-color:white;
+    border-radius: 15px;
 }
 /* 크기가 자동으로 설정되는 텍스트상자 */
 .textBox{
@@ -48,3 +57,51 @@
 .textBox input{
     flex: 1 1 auto;
 }
+
+.container .fabricInfo .infotext{
+    margin: 20px;
+    font-size: 20px;
+}
+
+.container .washMeth .infotext{
+    margin: 20px;
+    font-size: 20px;
+}
+.container .detInfo .infotext{
+    margin: 20px;
+    font-size: 20px;
+}
+
+.container .washInst .list{
+    margin: 20px;
+    margin-left: 30px;
+    font-size: 20px;
+}
+
+.container .fabric .fabricQuery .h1_text{
+    font-size: 50px;
+    display: inline-block;
+    white-space: nowrap;
+}
+
+a {
+    text-decoration-line: none;
+}
+
+a:link {
+    color : rgb(78, 78, 78);;
+  }
+  a:visited {
+    color : rgb(78, 78, 78);
+  }
+  a:hover {
+    color : rgb(17, 17, 184);
+  }
+  a:active {
+    color : rgb(18, 31, 16);
+  }
+
+
+
+
+

@@ -68,20 +68,22 @@ if(isset($_GET['id'])) {
             <!-- 소재명-->
             <div class="fabric">
                 <article id="fabricQuery">
-                    <h4><b><?=$Fabricname?></b></h4>
+                    <h2><b><?=$Fabricname?></b> Cotton</h2>
                 </article>
             </div>
             <!-- 소재정보-->
             <div class="fabricInfo">
                 <article id="fabricInfoQuery">
-                    <h4><b>소재정보</b></h4>
-                    <?=$FabricInfo?>
+                    <h2><b>소재정보</b></h2>
                 </article>
+                <div class="infotext">
+                        <?=$FabricInfo?>
+                </div>
             </div>
             <!--세탁 유의사항-->
             <div class="washInst">
                 <article id="washInstQuery">
-                    <h4><b>세탁 유의사항</b></h4>
+                    <h2><b>세탁 유의사항</b></h2>
                     <ol>
                          <?=$noticelist?> 
                     </ol>
@@ -90,7 +92,7 @@ if(isset($_GET['id'])) {
             </div>
             <!--나만의 팁 추가하기-->
             <div class="tips">
-                <h4><b>나만의 팁 추가하기</b></h4>
+                <h2><b>나만의 팁 추가하기</b></h2>
                 <form class="submit">
                     <div class="textBox">
                         <a href="cotton_create.php"> create </a>
@@ -99,14 +101,14 @@ if(isset($_GET['id'])) {
             </div>
             <!--세탁방법-->
             <div class="washMeth">
-                <h4><b>세탁방법</b></h4>
+                <h2><b>세탁방법</b></h2>
                 <article id="washMethQuery">
                      <?=$WashWay?> 
                 </article>
             </div>
             <!--세탁 정보-->
             <div class="detInfo">
-                <h4><b>세탁정보</b></h4>
+                <h2><b>세탁정보</b></h2>
                 <article id="detInfoQuery">
                 <?=$CleanserInfo?>
             </article>
