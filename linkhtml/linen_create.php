@@ -23,7 +23,7 @@ while($row = mysqli_fetch_array($joinfabric_result)) {
 $noticelist = '';
 while($row = mysqli_fetch_array($notice_linen_result)) {
     $noticelist = $noticelist."<li><a 
-    href=\"denim.php?id={$row['NoticeId']}\">{$row['Notice']}</a></li>";
+    href=\"linen.php?id={$row['NoticeId']}\">{$row['Notice']}</a></li>";
 }
 
 $FabricInfo = '';
@@ -80,7 +80,7 @@ while($row = mysqli_fetch_array($cleanserInfo_result)) {
                          <?=$noticelist?> 
                     </ol>
                 </article>
-                <?=$update?>
+                
             </div>
             <!--나만의 팁 추가하기-->
             <div class="tips">

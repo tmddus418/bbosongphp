@@ -1,17 +1,17 @@
 <?php
 $conn = mysqli_connect('localhost', 'root', 'j00502' , 'sy');
+settype($_POST['id'],'integer');
 $filltered = array (
+    'NoticeId'=> mysqli_real_escape_string($conn,$_POST['id']),
     'Notice' => mysqli_real_escape_string($conn,$_POST['Notice'])
 );
 $linen = "SELECT * FROM Fabric Where FabricId =3;";
 $sql = "
-    INSERT INTO FabricNotice
-    (FabricId,Notice)
-    VALUES(
-        3,
-        '{$filltered['Notice']}'
-        
-    )
+    UPDATE FabricNotice
+    SET
+        Notice = '{$filltered['Notice']}'
+    WHERE
+        NoticeId =  '{$filltered['NoticeId']}'
 ";
 $result = mysqli_query($conn,$sql);
 if($result === false) {

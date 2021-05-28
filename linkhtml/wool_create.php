@@ -39,7 +39,7 @@ while($row = mysqli_fetch_array($cleanserInfo_result)) {
 
 <!DOCTYPE html>
 <html>
-    <head> 
+    <head>
         <meta charset="utf-8">
         <title> Wool </title>
         <meta charset="utf-8">
@@ -80,7 +80,7 @@ while($row = mysqli_fetch_array($cleanserInfo_result)) {
                          <?=$noticelist?> 
                     </ol>
                 </article>
-                <?=$update?>
+                
             </div>
             <!--나만의 팁 추가하기-->
             <div class="tips">
