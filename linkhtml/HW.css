@@ -84,6 +84,18 @@ body {
     white-space: nowrap;
 }
 
+.atag{
+    grid-column:10/10;
+    grid-row:1;
+    margin-top: 60px;
+    margin-left: 100px;
+}
+
+.home {
+    font-size : 20px;
+    font-style:italic;
+}
+
 a {
     text-decoration-line: none;
 }

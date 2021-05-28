@@ -70,59 +70,64 @@ if(isset($_GET['id'])) {
         <script src="js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
     </head>
     <body>
-    <div class="container">
+        <div class="container">
             <!-- 소재명-->
             <div class="fabric">
-                <article id="fabricQuery">
-                    <h4><b><?=$Fabricname?></b></h4>
-                </article>
+                <div class="fabricQuery">
+                    <p class="h1_text"><b><?=$Fabricname?></b> Polyester</p>
+                </div>
+            </div>
+            <div class="atag">
+                    <a class="home" href = "http://127.0.0.1:8080/"> HOME</a>
             </div>
             <!-- 소재정보-->
             <div class="fabricInfo">
                 <article id="fabricInfoQuery">
-                    <h4><b>소재정보</b></h4>
-                    <?=$FabricInfo?>
+                    <h2><b>소재정보</b></h2>
                 </article>
+                <div class="infotext">
+                        <?=$FabricInfo?>
+                </div>
             </div>
             <!--세탁 유의사항-->
             <div class="washInst">
                 <article id="washInstQuery">
-                    <h4><b>세탁 유의사항</b></h4>
-                    <ol>
-                         <?=$noticelist?> 
-                    </ol>
+                    <h2><b>세탁 유의사항</b></h2>
                 </article>
+                <ol class = "list">
+                    <?=$noticelist?> 
+                </ol>
                 <?=$update?>
                 <?=$delete?>
             </div>
             <!--나만의 팁 추가하기-->
             <div class="tips">
-                <h4><b>나만의 팁 추가하기</b></h4>
+                <h2><b>나만의 팁 추가하기</b></h2>
                 <form class="submit">
                     <div class="textBox">
-                        <a href="poly_create.php"> create </a>
+                        <a style = "font-size:20px;" href="poly_create.php"> create </a>
                     </div>
                 </form>           
             </div>
             <!--세탁방법-->
             <div class="washMeth">
-                <h4><b>세탁방법</b></h4>
-                <article id="washMethQuery">
+                <h2><b>세탁방법</b></h2>
+                <div class="infotext">
                      <?=$WashWay?> 
-                </article>
+                </div>
             </div>
             <!--세탁 정보-->
             <div class="detInfo">
-                <h4><b>세탁정보</b></h4>
-                <article id="detInfoQuery">
+                <h2><b>세탁정보</b></h2>
+                <div class="infotext">
                 <?=$CleanserInfo?>
-            </article>
+                </div>
             </div>
         </div>
-        <footer style="background-color:white;">
+        <footer>
             <div class="container-fluid">
                 <div class="col-md-12">
-                    <p style="color:black; background-color:white; font-size: 15px;padding-bottom: 20px;">Copyright &copy; 2021 | GNU CS BBOSONG </p>
+                    <p style="color:black; background-color:#eff1e7; font-size: 15px;padding-bottom: 20px; text-align: center;">Copyright &copy; 2021 | GNU CS BBOSONG </p>
                 </div>
             </div>
         </footer>

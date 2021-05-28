@@ -77,6 +77,9 @@ if(isset($_GET['id'])) {
                     <p class="h1_text"><b><?=$Fabricname?></b> Denim</p>
                 </div>
             </div>
+            <div class="atag">
+                    <a class="home" href = "http://127.0.0.1:8080/"> HOME</a>
+            </div>
             <!-- 소재정보-->
             <div class="fabricInfo">
                 <article id="fabricInfoQuery">
