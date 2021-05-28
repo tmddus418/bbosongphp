@@ -8,7 +8,7 @@
     </head>
 
     <body>
-        <img src="nylon.png">
+        <img src = "nylon.png" style = "width:400px height : 1000px">
         
                       
     </body>

@@ -21,5 +21,5 @@
     </head>
 
     <body>
-        <h1>cotton</h1>
+        <img src = "nylon.png" style = "width:400px height : 1000px">
     </body>
