@@ -37,7 +37,12 @@ while($row = mysqli_fetch_array($cleanserInfo_result)) {
 }
 $update = '';
 if(isset($_GET['id'])) {
-    $sql = "SELECT * FROM FabricNotice "
+    $filter= mysqli_real_escape_string($conn,$_GET['id']);
+    $sql = "SELECT * FROM FabricNotice Where NoticeId={$filter}";
+    $result = mysqli_query($conn,$sql);
+    $row = mysqli_fetch_array($result);
+    $article['Notice'] = htmlspecialchars($row['Notice']);
+
     $update= '<a href="denim_update.php?id='.$_GET['id'].'"> update</a>';
 }
 ?>
@@ -91,8 +96,9 @@ if(isset($_GET['id'])) {
             <div class="tips">
                 <h4><b>나만의 팁 추가하기</b></h4>
                     <div class="textBox">
-                        <p><form action="denim_process_create.php" method = "post" class="submit"></p>
-                        <p><textarea name="Notice" placeholder = "나만의 꿀팁을 적어주세요 !"></textarea></p>
+                        <p><form action="denim_process_update.php" method = "post" class="submit"></p>
+                        <input type="hidden" name="id"value ="<?=$_GET['id']?>">
+                        <p><textarea name="Notice" placeholder = "나만의 꿀팁을 적어주세요 !"><?=$article['Notice']?></textarea></p>
                         <p><input type = "submit"></p>
                 </form>   
             </div>           

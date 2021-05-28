@@ -37,8 +37,14 @@ while($row = mysqli_fetch_array($cleanserInfo_result)) {
 }
 
 $update = '';
+$delete ='';
 if(isset($_GET['id'])) {
     $update= '<a href="denim_update.php?id='.$_GET['id'].'"> update</a>';
+    $delete= '
+    <form action="denim_process_delete.php" method="post">
+        <input type= "hidden" name = "id" value="'.$_GET['id'].'">
+        <input type= "submit" value="delete">
+    </form>';
 }
 
 
@@ -87,6 +93,7 @@ if(isset($_GET['id'])) {
                     </ol>
                 </article>
                 <?=$update?>
+                <?=$delete?>
             </div>
             <!--나만의 팁 추가하기-->
             <div class="tips">
