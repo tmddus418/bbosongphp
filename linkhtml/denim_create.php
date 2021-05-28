@@ -80,7 +80,7 @@ while($row = mysqli_fetch_array($cleanserInfo_result)) {
                          <?=$noticelist?> 
                     </ol>
                 </article>
-                <?=$update?>
+                
             </div>
             <!--나만의 팁 추가하기-->
             <div class="tips">
