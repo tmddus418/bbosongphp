@@ -1,17 +1,17 @@
 <?php
 $conn = mysqli_connect('localhost', 'root', 'j00502' , 'sy');
-$joinfabric = "SELECT FabricId,Fabric.CleanserId,CleanserInfo,Fabric.WashId,WashWay,FabricName,FabricInfo FROM Fabric LEFT JOIN Cleanser ON Fabric.CleanserId = Cleanser.CleanserId LEFT JOIN Wash ON Fabric.WashId = Wash.WashId WHERE FabricId = 1;";
-$notice_cotton = "SELECT * FROM FabricNotice Where FabricId =1;";
-$cotton = "SELECT * FROM Fabric Where FabricId =1;";
+$joinfabric = "SELECT FabricId,Fabric.CleanserId,CleanserInfo,Fabric.WashId,WashWay,FabricName,FabricInfo FROM Fabric LEFT JOIN Cleanser ON Fabric.CleanserId = Cleanser.CleanserId LEFT JOIN Wash ON Fabric.WashId = Wash.WashId WHERE FabricId = 7;";
+$notice_wool = "SELECT * FROM FabricNotice Where FabricId =7;";
+$wool = "SELECT * FROM Fabric Where FabricId =7;";
 
 $joinfabric_result = mysqli_query($conn,$joinfabric);
-$notice_cotton_result = mysqli_query($conn,$notice_cotton);
-$cotton_result = mysqli_query($conn,$cotton);
+$notice_wool_result = mysqli_query($conn,$notice_wool);
+$wool_result = mysqli_query($conn,$wool);
 $joinfabricInfo_result = mysqli_query($conn,$joinfabric);
 $cleanserInfo_result = mysqli_query($conn,$joinfabric);
 
 $Fabricname = '';
-while($row = mysqli_fetch_array($cotton_result)) {
+while($row = mysqli_fetch_array($wool_result)) {
     $Fabricname = $Fabricname."{$row['FabricName']}";
 }
 
@@ -21,9 +21,9 @@ while($row = mysqli_fetch_array($joinfabric_result)) {
 }
 
 $noticelist = '';
-while($row = mysqli_fetch_array($notice_cotton_result)) {
+while($row = mysqli_fetch_array($notice_wool_result)) {
     $noticelist = $noticelist."<li><a 
-    href=\"cotton.php?id={$row['NoticeId']}\">{$row['Notice']}</a></li>";
+    href=\"wool.php?id={$row['NoticeId']}\">{$row['Notice']}</a></li>";
 }
 
 $FabricInfo = '';
@@ -35,19 +35,13 @@ $CleanserInfo = '';
 while($row = mysqli_fetch_array($cleanserInfo_result)) {
     $CleanserInfo = $CleanserInfo."{$row['CleanserInfo']}";
 }
-
-$update = '';
-if(isset($_GET['id'])) {
-    $update= '<a href="cotton_update.php?id='.$_GET['id'].'"> update</a>';
-}
-
-
 ?>
+
 <!DOCTYPE html>
 <html>
-    <head>
+    <head> 
         <meta charset="utf-8">
-        <title> Cotton </title>
+        <title> Wool </title>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
         <meta name="description" content="Web UI Testing">
@@ -91,11 +85,12 @@ if(isset($_GET['id'])) {
             <!--나만의 팁 추가하기-->
             <div class="tips">
                 <h4><b>나만의 팁 추가하기</b></h4>
-                <form class="submit">
                     <div class="textBox">
-                        <a href="cotton_create.php"> create </a>
-                    </div>
-                </form>           
+                        <p><form action="wool_process_create.php" method = "post" class="submit"></p>
+                        <p><textarea name="Notice" placeholder = "나만의 꿀팁을 적어주세요 !"></textarea></p>
+                        <p><input type = "submit"></p>
+                </form>   
+            </div>           
             </div>
             <!--세탁방법-->
             <div class="washMeth">
