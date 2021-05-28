@@ -1,17 +1,17 @@
 <?php
 $conn = mysqli_connect('localhost', 'root', 'j00502' , 'sy');
 $joinfabric = "SELECT FabricId,Fabric.CleanserId,CleanserInfo,Fabric.WashId,WashWay,FabricName,FabricInfo FROM Fabric LEFT JOIN Cleanser ON Fabric.CleanserId = Cleanser.CleanserId LEFT JOIN Wash ON Fabric.WashId = Wash.WashId WHERE FabricId = 1;";
-$notice_cotton = "SELECT * FROM FabricNotice Where FabricId =1;";
-$cotton = "SELECT * FROM Fabric Where FabricId =1;";
+$notice_danim = "SELECT * FROM FabricNotice Where FabricId =1;";
+$danim = "SELECT * FROM Fabric Where FabricId =1;";
 
 $joinfabric_result = mysqli_query($conn,$joinfabric);
-$notice_cotton_result = mysqli_query($conn,$notice_cotton);
-$cotton_result = mysqli_query($conn,$cotton);
+$notice_danim_result = mysqli_query($conn,$notice_danim);
+$danim_result = mysqli_query($conn,$danim);
 $joinfabricInfo_result = mysqli_query($conn,$joinfabric);
 $cleanserInfo_result = mysqli_query($conn,$joinfabric);
 
 $Fabricname = '';
-while($row = mysqli_fetch_array($cotton_result)) {
+while($row = mysqli_fetch_array($danim_result)) {
     $Fabricname = $Fabricname."{$row['FabricName']}";
 }
 
@@ -21,9 +21,9 @@ while($row = mysqli_fetch_array($joinfabric_result)) {
 }
 
 $noticelist = '';
-while($row = mysqli_fetch_array($notice_cotton_result)) {
+while($row = mysqli_fetch_array($notice_danim_result)) {
     $noticelist = $noticelist."<li><a 
-    href=\"denim.php?id={$row['NoticeId']}\">{$row['Notice']}</a></li>";
+    href=\"cotton.php?id={$row['NoticeId']}\">{$row['Notice']}</a></li>";
 }
 
 $FabricInfo = '';
@@ -80,7 +80,7 @@ while($row = mysqli_fetch_array($cleanserInfo_result)) {
                          <?=$noticelist?> 
                     </ol>
                 </article>
-                <?=$update?>
+                
             </div>
             <!--나만의 팁 추가하기-->
             <div class="tips">

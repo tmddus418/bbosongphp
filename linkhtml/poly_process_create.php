@@ -3,12 +3,12 @@ $conn = mysqli_connect('localhost', 'root', 'j00502' , 'sy');
 $filltered = array (
     'Notice' => mysqli_real_escape_string($conn,$_POST['Notice'])
 );
-$danim = "SELECT * FROM Fabric Where FabricId =3;";
+$danim = "SELECT * FROM Fabric Where FabricId =2;";
 $sql = "
     INSERT INTO FabricNotice
     (FabricId,Notice)
     VALUES(
-        3,
+        2,
         '{$filltered['Notice']}'
         
     )

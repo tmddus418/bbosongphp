@@ -1,8 +1,8 @@
 <?php
 $conn = mysqli_connect('localhost', 'root', 'j00502' , 'sy');
-$joinfabric = "SELECT FabricId,Fabric.CleanserId,CleanserInfo,Fabric.WashId,WashWay,FabricName,FabricInfo FROM Fabric LEFT JOIN Cleanser ON Fabric.CleanserId = Cleanser.CleanserId LEFT JOIN Wash ON Fabric.WashId = Wash.WashId WHERE FabricId = 1;";
-$notice_danim = "SELECT * FROM FabricNotice Where FabricId =1;";
-$danim = "SELECT * FROM Fabric Where FabricId =1;";
+$joinfabric = "SELECT FabricId,Fabric.CleanserId,CleanserInfo,Fabric.WashId,WashWay,FabricName,FabricInfo FROM Fabric LEFT JOIN Cleanser ON Fabric.CleanserId = Cleanser.CleanserId LEFT JOIN Wash ON Fabric.WashId = Wash.WashId WHERE FabricId = 6;";
+$notice_danim = "SELECT * FROM FabricNotice Where FabricId =6;";
+$danim = "SELECT * FROM Fabric Where FabricId =6;";
 
 $joinfabric_result = mysqli_query($conn,$joinfabric);
 $notice_danim_result = mysqli_query($conn,$notice_danim);
@@ -23,7 +23,7 @@ while($row = mysqli_fetch_array($joinfabric_result)) {
 $noticelist = '';
 while($row = mysqli_fetch_array($notice_danim_result)) {
     $noticelist = $noticelist."<li><a 
-    href=\"cotton.php?id={$row['NoticeId']}\">{$row['Notice']}</a></li>";
+    href=\"silk.php?id={$row['NoticeId']}\">{$row['Notice']}</a></li>";
 }
 
 $FabricInfo = '';
@@ -43,7 +43,7 @@ if(isset($_GET['id'])) {
     $row = mysqli_fetch_array($result);
     $article['Notice'] = htmlspecialchars($row['Notice']);
 
-    $update= '<a href="cotton_update.php?id='.$_GET['id'].'"> update</a>';
+    $update= '<a href="silk_update.php?id='.$_GET['id'].'"> update</a>';
 }
 ?>
 
@@ -51,7 +51,7 @@ if(isset($_GET['id'])) {
 <html>
     <head>
         <meta charset="utf-8">
-        <title> Cotton </title>
+        <title> Silk </title>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
         <meta name="description" content="Web UI Testing">
@@ -96,7 +96,7 @@ if(isset($_GET['id'])) {
             <div class="tips">
                 <h4><b>나만의 팁 추가하기</b></h4>
                     <div class="textBox">
-                        <p><form action="cotton_process_update.php" method = "post" class="submit"></p>
+                        <p><form action="silk_process_update.php" method = "post" class="submit"></p>
                         <input type="hidden" name="id"value ="<?=$_GET['id']?>">
                         <p><textarea name="Notice" placeholder = "나만의 꿀팁을 적어주세요 !"><?=$article['Notice']?></textarea></p>
                         <p><input type = "submit"></p>
